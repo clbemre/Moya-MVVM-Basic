@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-MoyaTutorial1/Pods-MoyaTutorial1-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/Result/Result.framework

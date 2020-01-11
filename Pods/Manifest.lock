@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - Result (4.1.0)
+
+DEPENDENCIES:
+  - Moya (~> 13.0)
+  - NVActivityIndicatorView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - NVActivityIndicatorView
+    - Result
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+
+PODFILE CHECKSUM: 3c1851966d9f51579457529dc11de63bc6c20aed
+
+COCOAPODS: 1.9.0.beta.2
