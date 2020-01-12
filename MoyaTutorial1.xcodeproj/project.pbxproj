@@ -16,12 +16,13 @@
 		86C7D26423CA4D57008494E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D26323CA4D57008494E1 /* User.swift */; };
 		86C7D26623CA4E9F008494E1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D26523CA4E9F008494E1 /* UserService.swift */; };
 		86C7D26A23CA5667008494E1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D26923CA5667008494E1 /* UserManager.swift */; };
-		86C7D26C23CA569E008494E1 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D26B23CA569E008494E1 /* NetworkProtocols.swift */; };
+		86C7D26C23CA569E008494E1 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D26B23CA569E008494E1 /* UserProtocol.swift */; };
 		86C7D27123CA67A2008494E1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27023CA67A2008494E1 /* UserViewModel.swift */; };
 		86C7D27523CA7066008494E1 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27423CA7066008494E1 /* TitleTableViewCell.swift */; };
 		86C7D27823CA76A2008494E1 /* UserViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27723CA76A2008494E1 /* UserViewModelFactory.swift */; };
-		86C7D27B23CA78A7008494E1 /* BaseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27A23CA78A7008494E1 /* BaseProtocols.swift */; };
+		86C7D27B23CA78A7008494E1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27A23CA78A7008494E1 /* ViewModelFactory.swift */; };
 		86C7D27D23CB2B0F008494E1 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27C23CB2B0F008494E1 /* BaseRequest.swift */; };
+		86C7D28023CB3293008494E1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C7D27F23CB3293008494E1 /* BaseViewModel.swift */; };
 		E4AAD25BD44347AE49F118DF /* Pods_MoyaTutorial1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023AB168E44EBBEFFC6D9B3E /* Pods_MoyaTutorial1.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +40,13 @@
 		86C7D26323CA4D57008494E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86C7D26523CA4E9F008494E1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		86C7D26923CA5667008494E1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		86C7D26B23CA569E008494E1 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
+		86C7D26B23CA569E008494E1 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
 		86C7D27023CA67A2008494E1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		86C7D27423CA7066008494E1 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		86C7D27723CA76A2008494E1 /* UserViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelFactory.swift; sourceTree = "<group>"; };
-		86C7D27A23CA78A7008494E1 /* BaseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocols.swift; sourceTree = "<group>"; };
+		86C7D27A23CA78A7008494E1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		86C7D27C23CB2B0F008494E1 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		86C7D27F23CB3293008494E1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C2F8134D93214A44553DF535 /* Pods-MoyaTutorial1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaTutorial1.release.xcconfig"; path = "Target Support Files/Pods-MoyaTutorial1/Pods-MoyaTutorial1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,8 +149,9 @@
 		86C7D26F23CA6797008494E1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				86C7D27023CA67A2008494E1 /* UserViewModel.swift */,
-				86C7D27723CA76A2008494E1 /* UserViewModelFactory.swift */,
+				86C7D27F23CB3293008494E1 /* BaseViewModel.swift */,
+				86C7D27A23CA78A7008494E1 /* ViewModelFactory.swift */,
+				86C7D27E23CB3283008494E1 /* UserViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 		86C7D27623CA7188008494E1 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				86C7D26B23CA569E008494E1 /* UserProtocol.swift */,
 				86C7D26523CA4E9F008494E1 /* UserService.swift */,
 				86C7D26923CA5667008494E1 /* UserManager.swift */,
 			);
@@ -182,11 +186,18 @@
 		86C7D27923CA7892008494E1 /* BaseProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				86C7D27A23CA78A7008494E1 /* BaseProtocols.swift */,
-				86C7D26B23CA569E008494E1 /* NetworkProtocols.swift */,
 				86C7D27C23CB2B0F008494E1 /* BaseRequest.swift */,
 			);
 			path = BaseProtocols;
+			sourceTree = "<group>";
+		};
+		86C7D27E23CB3283008494E1 /* UserViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				86C7D27023CA67A2008494E1 /* UserViewModel.swift */,
+				86C7D27723CA76A2008494E1 /* UserViewModelFactory.swift */,
+			);
+			path = UserViewModel;
 			sourceTree = "<group>";
 		};
 		F3886673C2BDBE38E6687E2D /* Pods */ = {
@@ -317,9 +328,10 @@
 				86C7D27123CA67A2008494E1 /* UserViewModel.swift in Sources */,
 				86C7D26623CA4E9F008494E1 /* UserService.swift in Sources */,
 				86C7D23D23CA3B38008494E1 /* ViewController.swift in Sources */,
-				86C7D27B23CA78A7008494E1 /* BaseProtocols.swift in Sources */,
-				86C7D26C23CA569E008494E1 /* NetworkProtocols.swift in Sources */,
+				86C7D27B23CA78A7008494E1 /* ViewModelFactory.swift in Sources */,
+				86C7D26C23CA569E008494E1 /* UserProtocol.swift in Sources */,
 				86C7D26A23CA5667008494E1 /* UserManager.swift in Sources */,
+				86C7D28023CB3293008494E1 /* BaseViewModel.swift in Sources */,
 				86C7D27823CA76A2008494E1 /* UserViewModelFactory.swift in Sources */,
 				86C7D27D23CB2B0F008494E1 /* BaseRequest.swift in Sources */,
 				86C7D23923CA3B38008494E1 /* AppDelegate.swift in Sources */,

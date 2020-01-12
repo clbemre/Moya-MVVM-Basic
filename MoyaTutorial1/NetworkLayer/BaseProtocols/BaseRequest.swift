@@ -13,7 +13,7 @@ protocol IBaseManager {
 }
 
 class BaseManager<Type: TargetType, P: MoyaProvider<Type>>: IBaseManager {
-    
+
     typealias Target = Type
     private var provider: P
 

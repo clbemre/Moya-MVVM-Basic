@@ -1,5 +1,5 @@
 //
-//  BaseProtocols.swift
+//  ViewModelFactory.swift
 //  MoyaTutorial1
 //
 //  Created by Yunus Emre Celebi on 12.01.2020.
@@ -18,5 +18,3 @@ protocol ViewModelFactory {
     func makeManager() -> B
     func makeViewModel() -> V
 }
-
-protocol BaseViewModel { }

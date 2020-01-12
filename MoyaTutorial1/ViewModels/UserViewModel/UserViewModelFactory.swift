@@ -21,7 +21,7 @@ class UserViewModelFactory: ViewModelFactory {
     }
 
     func makeManager() -> UserManager {
-        return UserManager(provider: makeProvider())
+        return UserManager(userProvider: makeProvider())
     }
 
     func makeViewModel() -> UserViewModel {

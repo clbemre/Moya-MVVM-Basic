@@ -10,8 +10,8 @@ import Moya
 
 class UserManager: BaseManager<UserService, MoyaProvider<UserService>>, UserProtocol {
 
-    override init(provider: MoyaProvider<UserService>) {
-        super.init(provider: provider)
+    init(userProvider: MoyaProvider<UserService>) {
+        super.init(provider: userProvider)
     }
 
     func readUsers(completion: @escaping ([User]?, Error?) -> Void) {

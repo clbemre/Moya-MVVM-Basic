@@ -1,5 +1,5 @@
 //
-//  NUser.swift
+//  UserProtocol.swift
 //  MoyaTutorial1
 //
 //  Created by Yunus Emre Celebi on 11.01.2020.
