@@ -132,7 +132,7 @@
 		86C7D24F23CA3E0A008494E1 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				86C7D27923CA7892008494E1 /* BaseProtocols */,
+				86C7D27C23CB2B0F008494E1 /* BaseRequest.swift */,
 				86C7D27623CA7188008494E1 /* User */,
 			);
 			path = NetworkLayer;
@@ -181,14 +181,6 @@
 				86C7D26923CA5667008494E1 /* UserManager.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		86C7D27923CA7892008494E1 /* BaseProtocols */ = {
-			isa = PBXGroup;
-			children = (
-				86C7D27C23CB2B0F008494E1 /* BaseRequest.swift */,
-			);
-			path = BaseProtocols;
 			sourceTree = "<group>";
 		};
 		86C7D27E23CB3283008494E1 /* UserViewModel */ = {
