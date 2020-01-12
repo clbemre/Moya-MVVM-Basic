@@ -1,5 +1,5 @@
 //
-//  BaseRequest.swift
+//  BaseManager.swift
 //  MoyaTutorial1
 //
 //  Created by Yunus Emre Celebi on 12.01.2020.
@@ -9,21 +9,18 @@
 import Moya
 
 protocol IBaseManager {
-    associatedtype Target: TargetType
+
 }
 
-class BaseManager<Type: TargetType, P: MoyaProvider<Type>>: IBaseManager {
+class BaseManager<Target: TargetType, Provider: MoyaProvider<Target>>: IBaseManager {
 
-    typealias Target = Type
-    private var provider: P
+    private var provider: Provider
 
-    init(provider: P) {
+    init(provider: Provider) {
         self.provider = provider
     }
 
-    func mRequest<T: Codable>
-    (_ target: Target, callback: @escaping (T?, Error?) -> Void) {
-
+    func mRequest<T: Codable>(_ target: Target, callback: @escaping (T?, Error?) -> Void) {
         provider.request(target) { (result) in
             switch result {
             case .success(let response):

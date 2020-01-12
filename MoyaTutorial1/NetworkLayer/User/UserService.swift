@@ -18,7 +18,8 @@ enum UserService {
 extension UserService: TargetType {
 
     var baseURL: URL {
-        return URL(string: "https://jsonplaceholder.typicode.com")!
+        guard let url = URL(string: NetworkUtil.environmentBaseURL) else { fatalError("baseURL could not be configured") }
+        return url
     }
 
     var path: String {
@@ -70,6 +71,4 @@ extension UserService: TargetType {
     var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
-
-
 }

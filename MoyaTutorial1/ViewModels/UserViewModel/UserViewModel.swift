@@ -19,7 +19,7 @@ protocol UserViewModelDelegate: class {
     func deletedUser(indexPath: IndexPath)
 }
 
-class UserViewModel: BaseViewModel {
+class UserViewModel: IBaseViewModel {
 
     let userManager: UserManager
     private var users = [User]()

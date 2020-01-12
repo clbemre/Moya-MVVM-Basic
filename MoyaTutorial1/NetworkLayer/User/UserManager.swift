@@ -8,6 +8,13 @@
 
 import Moya
 
+protocol UserProtocol {
+    func readUsers(completion: @escaping ([User]?, Error?) -> Void)
+    func createUser(name: String, completion: @escaping (User?, Error?) -> Void)
+    func updateUser(id: Int, name: String, completion: @escaping (User?, Error?) -> Void)
+    func deleteUser(id: Int, completion: @escaping (Error?) -> Void)
+}
+
 class UserManager: BaseManager<UserService, MoyaProvider<UserService>>, UserProtocol {
 
     init(userProvider: MoyaProvider<UserService>) {
