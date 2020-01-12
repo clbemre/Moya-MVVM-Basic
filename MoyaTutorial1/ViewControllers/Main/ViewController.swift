@@ -59,7 +59,13 @@ class ViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let user = userViewModel.getUser(at: indexPath.row)
-        userViewModel.updateUser(indexPath: indexPath, id: user.id, name: user.name)
+        // userViewModel.updateUser(indexPath: indexPath, id: user.id, name: user.name)
+
+        let postViewController = PostTableViewController(
+            userId: user.id,
+            vm: PostViewModelFactory().makeViewModel()
+        )
+        self.navigationController?.pushViewController(postViewController, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

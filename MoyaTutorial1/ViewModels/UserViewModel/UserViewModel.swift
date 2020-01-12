@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol UserViewModelDelegate: class {
-    func showLoading()
-    func hideLoading()
-    func showErrorMessage(message: String)
+protocol UserViewModelDelegate: BaseViewModelDelegate {
 
     func readedUser()
     func createdUser(index: Int)

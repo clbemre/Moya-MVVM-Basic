@@ -9,3 +9,9 @@
 import Foundation
 
 protocol IBaseViewModel { }
+
+protocol BaseViewModelDelegate: class {
+    func showLoading()
+    func hideLoading()
+    func showErrorMessage(message: String)
+}

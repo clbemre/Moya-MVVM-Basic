@@ -15,9 +15,7 @@ class UserViewModelFactory: ViewModelFactory {
     typealias V = UserViewModel
 
     func makeProvider() -> MoyaProvider<UserService> {
-        let userProvider = MoyaProvider<UserService>(plugins: [NetworkLoggerPlugin(verbose: true)])
-        userProvider.manager.session.configuration.timeoutIntervalForRequest = 120
-        return userProvider
+        return createMoyaProvider(targetType: UserService.self)
     }
 
     func makeManager() -> UserManager {
