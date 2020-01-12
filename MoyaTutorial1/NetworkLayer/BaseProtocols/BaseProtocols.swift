@@ -11,16 +11,12 @@ import Moya
 protocol ViewModelFactory {
 
     associatedtype Target: TargetType
-    associatedtype B: BaseManager
+    associatedtype B: IBaseManager
     associatedtype V: BaseViewModel
 
     func makeProvider() -> MoyaProvider<Target>
     func makeManager() -> B
     func makeViewModel() -> V
-}
-
-protocol BaseManager {
-    associatedtype Target: TargetType
 }
 
 protocol BaseViewModel { }

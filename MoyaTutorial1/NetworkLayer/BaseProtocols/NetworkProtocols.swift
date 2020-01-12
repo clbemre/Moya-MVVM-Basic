@@ -10,8 +10,6 @@ import Moya
 
 protocol UserProtocol {
 
-    var userProvider: MoyaProvider<UserService> { get }
-
     func readUsers(completion: @escaping ([User]?, Error?) -> Void)
     func createUser(name: String, completion: @escaping (User?, Error?) -> Void)
     func updateUser(id: Int, name: String, completion: @escaping (User?, Error?) -> Void)
