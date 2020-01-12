@@ -8,21 +8,18 @@
 
 import UIKit
 import Moya
-import NVActivityIndicatorView
 
-class ViewController: UITableViewController {
+class ViewController: BaseTableViewController {
 
     // MARK: Vars
 
     var userViewModel: UserViewModel = UserViewModelFactory().makeViewModel()
-    var activityIndicator: NVActivityIndicatorView?
 
     // MARK: View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)
-        tableView.tableFooterView = UIView()
+        self.setupUI()
 
         /*let userProvider = MoyaProvider<UserService>(plugins: [NetworkLoggerPlugin(verbose: true)])
         userProvider.manager.session.configuration.timeoutIntervalForRequest = 120
@@ -33,12 +30,8 @@ class ViewController: UITableViewController {
         userViewModel.readUser()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballBeat, color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), padding: nil)
-    }
-
     // MARK: IBActions
+    
     @IBAction func didTapAdd() {
         self.userViewModel.createUser(name: "Emre Celebi \(Int.random(in: 0..<61))")
     }
@@ -72,7 +65,6 @@ class ViewController: UITableViewController {
 
         let user = userViewModel.getUser(at: indexPath.row)
         userViewModel.deleteUser(indexPath: indexPath, id: user.id)
-
     }
 }
 
@@ -88,9 +80,7 @@ extension ViewController: UserViewModelDelegate {
     }
 
     func showErrorMessage(message: String) {
-        let alert = UIAlertController(title: "Hata!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        showErrorAlert(message: message)
     }
 
     func readedUser() {
@@ -113,22 +103,11 @@ extension ViewController: UserViewModelDelegate {
 
 }
 
-// Like BaseViewController
-
+// MARK: Setup
 extension ViewController {
 
-    // MARK: Activity Indicator
-    private func showLoadingIndicator() {
-        if let activityIndicator = activityIndicator {
-            self.view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
-        }
-    }
-
-    private func hideLoadingIndicator() {
-        if let activityIndicator = activityIndicator {
-            activityIndicator.removeFromSuperview()
-            activityIndicator.stopAnimating()
-        }
+    func setupUI() {
+        view.backgroundColor = #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)
+        tableView.tableFooterView = UIView()
     }
 }

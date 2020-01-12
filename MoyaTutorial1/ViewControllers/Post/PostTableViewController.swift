@@ -7,14 +7,10 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 
-class PostTableViewController: UITableViewController {
+class PostTableViewController: BaseTableViewController {
 
     // MARK: Vars
-
-    // var postViewModel: PostViewModel = PostViewModelFactory().makeViewModel()
-    var activityIndicator: NVActivityIndicatorView?
 
     let postViewModel: PostViewModel
     let userId: Int
@@ -34,24 +30,15 @@ class PostTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)
-        tableView.tableFooterView = UIView()
-
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.tintColor = .white
-        self.refreshControl?.addTarget(self, action: #selector(self.refreshTableView(sender:)), for: .valueChanged)
-
+        self.setupUI()
+        self.setupRefreshControl()
 
         postViewModel.delegate = self
         postViewModel.readPosts(userId: userId)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballBeat, color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), padding: nil)
-    }
-
     // MARK: IBActions
+    
     @objc func refreshTableView(sender: AnyObject) {
         postViewModel.readPosts(userId: userId)
     }
@@ -83,9 +70,7 @@ extension PostTableViewController: PostViewModelDelegate {
     }
 
     func showErrorMessage(message: String) {
-        let alert = UIAlertController(title: "Hata!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        showErrorAlert(message: message)
     }
 
     func readedPosts() {
@@ -94,22 +79,17 @@ extension PostTableViewController: PostViewModelDelegate {
 
 }
 
-
-// Like BaseViewController
+// MARK: Setup
 extension PostTableViewController {
 
-    // MARK: Activity Indicator
-    private func showLoadingIndicator() {
-        if let activityIndicator = activityIndicator {
-            self.view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
-        }
+    func setupUI() {
+        view.backgroundColor = #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)
+        tableView.tableFooterView = UIView()
     }
 
-    private func hideLoadingIndicator() {
-        if let activityIndicator = activityIndicator {
-            activityIndicator.removeFromSuperview()
-            activityIndicator.stopAnimating()
-        }
+    func setupRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.tintColor = .white
+        self.refreshControl?.addTarget(self, action: #selector(self.refreshTableView(sender:)), for: .valueChanged)
     }
 }
